@@ -1,0 +1,8 @@
+print('Thank you playing our simulation game! Please pick 5 players, then you can see if your team wins against 5 other players of your choice or a random selection.')
+print()
+P1 = input('Enter a players name : ')
+P2 = input('Enter a players name : ')
+P3 = input('Enter a players name : ')
+P4 = input('Enter a players name : ')
+P5 = input('Enter a players name : ')
+print (f'These are your players:\n{P1}\n{P2}\n{P3}\n{P4}\n{P5}\n')

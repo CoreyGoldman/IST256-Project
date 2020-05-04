@@ -1,0 +1,13 @@
+def random_players():
+    import random
+
+    player_list = ['chris', 'rutva', 'daniel', 'fudge', 'cody']
+
+    O1 = random.choice(player_list)
+    O2 = random.choice(player_list)
+    O3 = random.choice(player_list)
+    O4 = random.choice(player_list)
+    O5 = random.choice(player_list)
+    opponent_list = [O1, O2, O3, O4, O5]
+
+    return (opponent_list)

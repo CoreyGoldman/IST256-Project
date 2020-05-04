@@ -1,0 +1,14 @@
+for check in Scenario:
+    Scenario = input('Do you want to pick the other teams players? "Y" or "N", you may enter "Q" to stop the program:')
+    Scenario = Scenario.upper()
+    if Scenario == "Q":
+        print('maybe next time')
+        break        
+    if Scenario == "Y":
+        picked_players(Scenario)
+        break
+    if Scenario == "N":
+        random_players()
+        break
+    elif Scenario != ("Y" or "N"):
+        print('please try again')

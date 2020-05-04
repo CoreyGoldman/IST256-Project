@@ -1,0 +1,12 @@
+def picked_players():
+    
+    print('What 5 players do you want to play against?')
+    print()
+    O1 = input('Enter a players name : ')
+    O2 = input('Enter a players name : ')
+    O3 = input('Enter a players name : ')
+    O4 = input('Enter a players name : ')
+    O5 = input('Enter a players name : ')
+    opponent_list = [O1, O2, O3, O4, O5]
+
+    return (opponent_list)
