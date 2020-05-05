@@ -1,0 +1,16 @@
+if FinalWinProb > 99:
+    print (f"Should win even play the game, this one is going to be a blowout. Your win probabilty is {FinalWinProb}%. The average difference in Player Efficiency Rating from you team to the average was {PER_advantage}. For Offensive Win Shares it was {OWS_advantage} and for Defensive Win Shares it was {DWS_advantage}. Ultimately these differences led to the game outcome probability." )
+elif FinalWinProb > 90:
+    print (f"Get in, get out with a W, and on to thenext one. Your win probabilty is {FinalWinProb}%. The average difference in Player Efficiency Rating from you team to the average was {PER_advantage}. For Offensive Win Shares it was {OWS_advantage} and for Defensive Win Shares it was {DWS_advantage}. Ultimately these differences led to the game outcome probability." )
+elif FinalWinProb > 70:
+     print (f"You should win this one. Your win probabilty is {FinalWinProb}%. The average difference in Player Efficiency Rating from you team to the average was {PER_advantage}. For Offensive Win Shares it was {OWS_advantage} and for Defensive Win Shares it was {DWS_advantage}. Ultimately these differences led to the game outcome probability." )
+elif FinalWinProb > 60:
+     print (f"The odds are in your favor, but never count out an upset. Your win probabilty is {FinalWinProb}%. The average difference in Player Efficiency Rating from you team to the average was {PER_advantage}. For Offensive Win Shares it was {OWS_advantage} and for Defensive Win Shares it was {DWS_advantage}. Ultimately these differences led to the game outcome probability." )
+elif FinalWinProb > 40:
+     print (f"This one is a toss up I couldn't tell you who's going to win'. Your win probabilty is {FinalWinProb}%. The average difference in Player Efficiency Rating from you team to the average was {PER_advantage}. For Offensive Win Shares it was {OWS_advantage} and for Defensive Win Shares it was {DWS_advantage}. Ultimately these differences led to the game outcome probability." )
+elif FinalWinProb > 20:
+     print (f"The other team has the edge, but you never know what could happen. Your win probabilty is {FinalWinProb}%. The average difference in Player Efficiency Rating from you team to the average was {PER_advantage}. For Offensive Win Shares it was {OWS_advantage} and for Defensive Win Shares it was {DWS_advantage}. Ultimately these differences led to the game outcome probability." )
+elif FinalWinProb > 10:
+     print (f"This one is not looking good. Your win probabilty is {FinalWinProb}%. The average difference in Player Efficiency Rating from you team to the average was {PER_advantage}. For Offensive Win Shares it was {OWS_advantage} and for Defensive Win Shares it was {DWS_advantage}. Ultimately these differences led to the game outcome probability." )
+else:
+     print (f"A broken clock is right twice a day, but I don't see you winning this one. Your win probabilty is {FinalWinProb}%. The average difference in Player Efficiency Rating from you team to the average was {PER_advantage}. For Offensive Win Shares it was {OWS_advantage} and for Defensive Win Shares it was {DWS_advantage}. Ultimately these differences led to the game outcome probability." )
