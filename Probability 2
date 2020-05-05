@@ -1,0 +1,18 @@
+teamA_PER = (P1PER + P2PER + P3PER + P4PER + P5PER)/5
+teamA_OWS = (P1OWS + P2OWS + P3OWS + P4OWS + P5OWS)/5
+teamA_DWS = (P1DWS + P2DWS + P3DWS + P4DWS + P5DWS)/5
+PER_advantage = (teamA_PER - BaseTeamPER)
+OWS_advantage = (teamA_OWS - BaseTeamOWS)
+DWS_advantage = (teamA_DWS - BaseTeamDWS)
+
+ChangeWinProb = ((PER_advantage/PERSD*.15)+(OWS_advantage/OWSSD*.15)+(DWS_advantage/DWSSD*.15))*100
+FinalWinProb = WinProb + ChangeWinProb
+if FinalWinProb > 99:
+    FinalWinProb = 99
+else:
+    FinalWinProb = FinalWinProb
+    
+if FinalWinProb < 0:
+    FinalWinProb = 1
+else:
+    FinalWinProb = FinalWinProb
