@@ -1,0 +1,97 @@
+import csv
+
+f = open('2019_stats_edited.csv', 'r')
+
+reader = csv.reader(f)
+
+people = {}
+
+for row in reader:
+    people[row[0]] = {'team':row[1], 'PER':row[2], 'OWS':row[3], 'DWS':row[4]}
+
+def player_players():
+
+    P_input = input('Enter a first and last name: ')
+
+    P_input = P_input.title()
+
+    if P_input in people:
+        P_pick = people[P_input]
+    else:
+        P_pick = print("Name not found, please check spelling and enter name first space last: example 'Micheal Jordan'")
+    
+    return P_pick
+    
+print('What 5 players do you want on your team?')
+print()
+P1 = player_players()
+P2 = player_players()
+P3 = player_players()
+P4 = player_players()
+P5 = player_players()
+with open ("picked_players.txt",'w') as file:
+	file.write(f"{P1}\n{P2}\n{P3}\n{P4}\n{P5}")
+    
+WinProb = 50
+
+P1PER = float (P1['PER'])
+P2PER = float (P2['PER'])
+P3PER = float (P3['PER'])
+P4PER = float (P4['PER'])
+P5PER = float (P5['PER'])
+
+P1OWS = float (P1['OWS'])
+P2OWS = float (P2['OWS'])
+P3OWS = float (P3['OWS'])
+P4OWS = float (P4['OWS'])
+P5OWS = float (P5['OWS'])
+
+P1DWS = float (P1['DWS'])
+P2DWS = float (P2['DWS'])
+P3DWS = float (P3['DWS'])
+P4DWS = float (P4['DWS'])
+P5DWS = float (P5['DWS'])
+
+BaseTeamPER = 13.24702495
+BaseTeamOWS = 1.237236084
+BaseTeamDWS = 1.155278311
+
+PERSD = 7.058072014
+OWSSD = 1.854836516
+DWSSD = 1.106543461
+
+teamA_PER = (P1PER + P2PER + P3PER + P4PER + P5PER)/5
+teamA_OWS = (P1OWS + P2OWS + P3OWS + P4OWS + P5OWS)/5
+teamA_DWS = (P1DWS + P2DWS + P3DWS + P4DWS + P5DWS)/5
+PER_advantage = (teamA_PER - BaseTeamPER)
+OWS_advantage = (teamA_OWS - BaseTeamOWS)
+DWS_advantage = (teamA_DWS - BaseTeamDWS)
+
+ChangeWinProb = ((PER_advantage/PERSD*.15)+(OWS_advantage/OWSSD*.15)+(DWS_advantage/DWSSD*.15))*100
+FinalWinProb = WinProb + ChangeWinProb
+if FinalWinProb > 99:
+    FinalWinProb = 99
+else:
+    FinalWinProb = FinalWinProb
+    
+if FinalWinProb < 0:
+    FinalWinProb = 1
+else:
+    FinalWinProb = FinalWinProb
+    
+if FinalWinProb > 99:
+    print (f"Should win even play the game, this one is going to be a blowout. Your win probabilty is {FinalWinProb}%. The average difference in Player Efficiency Rating from you team to the average was {PER_advantage}. For Offensive Win Shares it was {OWS_advantage} and for Defensive Win Shares it was {DWS_advantage}. Ultimately these differences led to the game outcome probability." )
+elif FinalWinProb > 90:
+    print (f"Get in, get out with a W, and on to thenext one. Your win probabilty is {FinalWinProb}%. The average difference in Player Efficiency Rating from you team to the average was {PER_advantage}. For Offensive Win Shares it was {OWS_advantage} and for Defensive Win Shares it was {DWS_advantage}. Ultimately these differences led to the game outcome probability." )
+elif FinalWinProb > 70:
+     print (f"You should win this one. Your win probabilty is {FinalWinProb}%. The average difference in Player Efficiency Rating from you team to the average was {PER_advantage}. For Offensive Win Shares it was {OWS_advantage} and for Defensive Win Shares it was {DWS_advantage}. Ultimately these differences led to the game outcome probability." )
+elif FinalWinProb > 60:
+     print (f"The odds are in your favor, but never count out an upset. Your win probabilty is {FinalWinProb}%. The average difference in Player Efficiency Rating from you team to the average was {PER_advantage}. For Offensive Win Shares it was {OWS_advantage} and for Defensive Win Shares it was {DWS_advantage}. Ultimately these differences led to the game outcome probability." )
+elif FinalWinProb > 40:
+     print (f"This one is a toss up I couldn't tell you who's going to win'. Your win probabilty is {FinalWinProb}%. The average difference in Player Efficiency Rating from you team to the average was {PER_advantage}. For Offensive Win Shares it was {OWS_advantage} and for Defensive Win Shares it was {DWS_advantage}. Ultimately these differences led to the game outcome probability." )
+elif FinalWinProb > 20:
+     print (f"The other team has the edge, but you never know what could happen. Your win probabilty is {FinalWinProb}%. The average difference in Player Efficiency Rating from you team to the average was {PER_advantage}. For Offensive Win Shares it was {OWS_advantage} and for Defensive Win Shares it was {DWS_advantage}. Ultimately these differences led to the game outcome probability." )
+elif FinalWinProb > 10:
+     print (f"This one is not looking good. Your win probabilty is {FinalWinProb}%. The average difference in Player Efficiency Rating from you team to the average was {PER_advantage}. For Offensive Win Shares it was {OWS_advantage} and for Defensive Win Shares it was {DWS_advantage}. Ultimately these differences led to the game outcome probability." )
+else:
+     print (f"A broken clock is right twice a day, but I don't see you winning this one. Your win probabilty is {FinalWinProb}%. The average difference in Player Efficiency Rating from you team to the average was {PER_advantage}. For Offensive Win Shares it was {OWS_advantage} and for Defensive Win Shares it was {DWS_advantage}. Ultimately these differences led to the game outcome probability." )
