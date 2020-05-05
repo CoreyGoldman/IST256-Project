@@ -1,0 +1,3 @@
+print ('Welcome to the 2019 NBA team builder!')
+print ('You will select 5 players to be on your team and see how the computer projects the to do against a team of average NBA players. ')
+print ('You must enter the exact name of the player so heres a few to try out... Carmelo Anthony, Lonzo Ball, Trey Burke, Jimmy Butler, Stephen Curry, Dario Saric, Jonathon Simmons, Marc Gasol, Montrezl Harrell, Iman Shumpert')
