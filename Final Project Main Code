@@ -82,7 +82,7 @@ else:
 if FinalWinProb > 99:
     print (f"Should we even play the game, this one is going to be a blowout. Your win probabilty is {FinalWinProb}%. The average difference in Player Efficiency Rating from you team to the average was {PER_advantage}. For Offensive Win Shares it was {OWS_advantage} and for Defensive Win Shares it was {DWS_advantage}. Ultimately these differences led to the game outcome probability." )
 elif FinalWinProb > 90:
-    print (f"Get in, get out with a W, and on to thenext one. Your win probabilty is {FinalWinProb}%. The average difference in Player Efficiency Rating from you team to the average was {PER_advantage}. For Offensive Win Shares it was {OWS_advantage} and for Defensive Win Shares it was {DWS_advantage}. Ultimately these differences led to the game outcome probability." )
+    print (f"Get in, get out with a W, and on to the next one. Your win probabilty is {FinalWinProb}%. The average difference in Player Efficiency Rating from you team to the average was {PER_advantage}. For Offensive Win Shares it was {OWS_advantage} and for Defensive Win Shares it was {DWS_advantage}. Ultimately these differences led to the game outcome probability." )
 elif FinalWinProb > 70:
      print (f"You should win this one. Your win probabilty is {FinalWinProb}%. The average difference in Player Efficiency Rating from you team to the average was {PER_advantage}. For Offensive Win Shares it was {OWS_advantage} and for Defensive Win Shares it was {DWS_advantage}. Ultimately these differences led to the game outcome probability." )
 elif FinalWinProb > 60:
